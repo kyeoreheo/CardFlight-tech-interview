@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		31A9F95325B562D200166B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F95225B562D200166B3E /* AppDelegate.swift */; };
 		31A9F95525B562D200166B3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F95425B562D200166B3E /* SceneDelegate.swift */; };
 		31A9F95725B562D200166B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F95625B562D200166B3E /* ViewController.swift */; };
-		31A9F95A25B562D200166B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A9F95825B562D200166B3E /* Main.storyboard */; };
 		31A9F95C25B562D400166B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A9F95B25B562D400166B3E /* Assets.xcassets */; };
 		31A9F95F25B562D400166B3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A9F95D25B562D400166B3E /* LaunchScreen.storyboard */; };
 		31A9F96A25B562D500166B3E /* BowlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F96925B562D500166B3E /* BowlingTests.swift */; };
 		31A9F97525B562D500166B3E /* BowlingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F97425B562D500166B3E /* BowlingUITests.swift */; };
+		525E48D9FA87C09832A78235 /* Pods_Bowling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE29ED6C519FC70033965D /* Pods_Bowling.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23CE29ED6C519FC70033965D /* Pods_Bowling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bowling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9F94F25B562D200166B3E /* Bowling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bowling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9F95225B562D200166B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A9F95425B562D200166B3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		31A9F95625B562D200166B3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31A9F95925B562D200166B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31A9F95B25B562D400166B3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A9F95E25B562D400166B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31A9F96025B562D400166B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		31A9F97025B562D500166B3E /* BowlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9F97425B562D500166B3E /* BowlingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingUITests.swift; sourceTree = "<group>"; };
 		31A9F97625B562D500166B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81698A273552E453F798D411 /* Pods-Bowling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.release.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.release.xcconfig"; sourceTree = "<group>"; };
+		E11BDCB95FC444CCE2FCB557 /* Pods-Bowling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.debug.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525E48D9FA87C09832A78235 /* Pods_Bowling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,8 @@
 				31A9F96825B562D500166B3E /* BowlingTests */,
 				31A9F97325B562D500166B3E /* BowlingUITests */,
 				31A9F95025B562D200166B3E /* Products */,
+				56931507203A2C47D34D42D4 /* Pods */,
+				DB12A327C71C903064E75682 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +104,12 @@
 		31A9F95125B562D200166B3E /* Bowling */ = {
 			isa = PBXGroup;
 			children = (
+				31CDE45A25B570B7004DE90B /* Extenstions */,
+				31CDE45925B570B1004DE90B /* Fonts */,
+				31CDE45825B570A8004DE90B /* Applicatioin */,
 				31A9F95225B562D200166B3E /* AppDelegate.swift */,
 				31A9F95425B562D200166B3E /* SceneDelegate.swift */,
 				31A9F95625B562D200166B3E /* ViewController.swift */,
-				31A9F95825B562D200166B3E /* Main.storyboard */,
 				31A9F95B25B562D400166B3E /* Assets.xcassets */,
 				31A9F95D25B562D400166B3E /* LaunchScreen.storyboard */,
 				31A9F96025B562D400166B3E /* Info.plist */,
@@ -128,6 +135,44 @@
 			path = BowlingUITests;
 			sourceTree = "<group>";
 		};
+		31CDE45825B570A8004DE90B /* Applicatioin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Applicatioin;
+			sourceTree = "<group>";
+		};
+		31CDE45925B570B1004DE90B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		31CDE45A25B570B7004DE90B /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		56931507203A2C47D34D42D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E11BDCB95FC444CCE2FCB557 /* Pods-Bowling.debug.xcconfig */,
+				81698A273552E453F798D411 /* Pods-Bowling.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB12A327C71C903064E75682 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23CE29ED6C519FC70033965D /* Pods_Bowling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31A9F97925B562D500166B3E /* Build configuration list for PBXNativeTarget "Bowling" */;
 			buildPhases = (
+				6DF23E47339D992884D2B020 /* [CP] Check Pods Manifest.lock */,
 				31A9F94B25B562D200166B3E /* Sources */,
 				31A9F94C25B562D200166B3E /* Frameworks */,
 				31A9F94D25B562D200166B3E /* Resources */,
+				2B8899D8E7BEE81994595980 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +280,6 @@
 			files = (
 				31A9F95F25B562D400166B3E /* LaunchScreen.storyboard in Resources */,
 				31A9F95C25B562D400166B3E /* Assets.xcassets in Resources */,
-				31A9F95A25B562D200166B3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +298,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B8899D8E7BEE81994595980 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bowling/Pods-Bowling-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bowling/Pods-Bowling-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bowling/Pods-Bowling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DF23E47339D992884D2B020 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bowling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31A9F94B25B562D200166B3E /* Sources */ = {
@@ -296,14 +384,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		31A9F95825B562D200166B3E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31A9F95925B562D200166B3E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		31A9F95D25B562D400166B3E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,6 +513,7 @@
 		};
 		31A9F97A25B562D500166B3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E11BDCB95FC444CCE2FCB557 /* Pods-Bowling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +533,7 @@
 		};
 		31A9F97B25B562D500166B3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81698A273552E453F798D411 /* Pods-Bowling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
