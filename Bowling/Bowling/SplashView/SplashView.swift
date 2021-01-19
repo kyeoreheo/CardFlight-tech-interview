@@ -37,6 +37,7 @@ class SplashView: UIViewController {
         myGame.addPoint(of: .one)
 
         myGame.boardInfo()
+        presentMainTabBar()
     }
     
     private func configureUI() {

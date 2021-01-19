@@ -21,9 +21,19 @@
 		31CDE48725B5F98D004DE90B /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE48625B5F98D004DE90B /* MainTab.swift */; };
 		31CDE48C25B5F9BA004DE90B /* MainTabVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE48B25B5F9BA004DE90B /* MainTabVM.swift */; };
 		31CDE49425B5F9E5004DE90B /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE49325B5F9E5004DE90B /* UIImage+.swift */; };
-		31CDE49B25B6209B004DE90B /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE49A25B6209B004DE90B /* HistoryVC.swift */; };
-		31CDE4A325B620BB004DE90B /* HistoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4A225B620BB004DE90B /* HistoryCVC.swift */; };
+		31CDE49B25B6209B004DE90B /* GameHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE49A25B6209B004DE90B /* GameHistoryVC.swift */; };
+		31CDE4A325B620BB004DE90B /* GameHistoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4A225B620BB004DE90B /* GameHistoryCVC.swift */; };
 		31CDE4A925B62270004DE90B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4A825B62270004DE90B /* Game.swift */; };
+		31CDE4B425B65D79004DE90B /* NewGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4B325B65D79004DE90B /* NewGameVC.swift */; };
+		31CDE4BC25B65D8B004DE90B /* GameCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4BB25B65D8B004DE90B /* GameCVC.swift */; };
+		31CDE4C125B65D97004DE90B /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4C025B65D97004DE90B /* FrameCell.swift */; };
+		31CDE4D025B65E38004DE90B /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 31CDE4CB25B65E36004DE90B /* NotoSansCJKkr-Black.otf */; };
+		31CDE4D125B65E38004DE90B /* BlackHanSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31CDE4CC25B65E36004DE90B /* BlackHanSans-Regular.ttf */; };
+		31CDE4D225B65E38004DE90B /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 31CDE4CD25B65E36004DE90B /* NotoSansCJKkr-Bold.otf */; };
+		31CDE4D325B65E38004DE90B /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 31CDE4CE25B65E37004DE90B /* NotoSansCJKkr-Regular.otf */; };
+		31CDE4D425B65E38004DE90B /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 31CDE4CF25B65E38004DE90B /* NotoSansCJKkr-Thin.otf */; };
+		31CDE4D925B65E55004DE90B /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4D825B65E55004DE90B /* UIFont+.swift */; };
+		31CDE4ED25B69127004DE90B /* GameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4EC25B69127004DE90B /* GameSection.swift */; };
 		525E48D9FA87C09832A78235 /* Pods_Bowling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE29ED6C519FC70033965D /* Pods_Bowling.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,9 +76,19 @@
 		31CDE48625B5F98D004DE90B /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		31CDE48B25B5F9BA004DE90B /* MainTabVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVM.swift; sourceTree = "<group>"; };
 		31CDE49325B5F9E5004DE90B /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
-		31CDE49A25B6209B004DE90B /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
-		31CDE4A225B620BB004DE90B /* HistoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCVC.swift; sourceTree = "<group>"; };
+		31CDE49A25B6209B004DE90B /* GameHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryVC.swift; sourceTree = "<group>"; };
+		31CDE4A225B620BB004DE90B /* GameHistoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCVC.swift; sourceTree = "<group>"; };
 		31CDE4A825B62270004DE90B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		31CDE4B325B65D79004DE90B /* NewGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameVC.swift; sourceTree = "<group>"; };
+		31CDE4BB25B65D8B004DE90B /* GameCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCVC.swift; sourceTree = "<group>"; };
+		31CDE4C025B65D97004DE90B /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
+		31CDE4CB25B65E36004DE90B /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		31CDE4CC25B65E36004DE90B /* BlackHanSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BlackHanSans-Regular.ttf"; sourceTree = "<group>"; };
+		31CDE4CD25B65E36004DE90B /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		31CDE4CE25B65E37004DE90B /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		31CDE4CF25B65E38004DE90B /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		31CDE4D825B65E55004DE90B /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		31CDE4EC25B69127004DE90B /* GameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSection.swift; sourceTree = "<group>"; };
 		81698A273552E453F798D411 /* Pods-Bowling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.release.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.release.xcconfig"; sourceTree = "<group>"; };
 		E11BDCB95FC444CCE2FCB557 /* Pods-Bowling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.debug.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,7 +148,7 @@
 				31CDE45925B570B1004DE90B /* Fonts */,
 				31CDE45A25B570B7004DE90B /* Extenstions */,
 				31CDE46425B5777A004DE90B /* SplashView */,
-				31CDE4A725B620D6004DE90B /* Score */,
+				31CDE4A725B620D6004DE90B /* Game */,
 				31CDE48525B5F969004DE90B /* MainTab */,
 			);
 			path = Bowling;
@@ -168,6 +188,11 @@
 		31CDE45925B570B1004DE90B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				31CDE4CC25B65E36004DE90B /* BlackHanSans-Regular.ttf */,
+				31CDE4CB25B65E36004DE90B /* NotoSansCJKkr-Black.otf */,
+				31CDE4CD25B65E36004DE90B /* NotoSansCJKkr-Bold.otf */,
+				31CDE4CE25B65E37004DE90B /* NotoSansCJKkr-Regular.otf */,
+				31CDE4CF25B65E38004DE90B /* NotoSansCJKkr-Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -179,6 +204,7 @@
 				31CDE47225B57846004DE90B /* UIViewController+.swift */,
 				31CDE47725B57860004DE90B /* UIColor+.swift */,
 				31CDE49325B5F9E5004DE90B /* UIImage+.swift */,
+				31CDE4D825B65E55004DE90B /* UIFont+.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -205,6 +231,10 @@
 		31CDE49825B6200E004DE90B /* NewGameTab */ = {
 			isa = PBXGroup;
 			children = (
+				31CDE4B325B65D79004DE90B /* NewGameVC.swift */,
+				31CDE4BB25B65D8B004DE90B /* GameCVC.swift */,
+				31CDE4C025B65D97004DE90B /* FrameCell.swift */,
+				31CDE4EC25B69127004DE90B /* GameSection.swift */,
 			);
 			path = NewGameTab;
 			sourceTree = "<group>";
@@ -212,18 +242,18 @@
 		31CDE49925B6201B004DE90B /* GameHistroyTab */ = {
 			isa = PBXGroup;
 			children = (
-				31CDE49A25B6209B004DE90B /* HistoryVC.swift */,
-				31CDE4A225B620BB004DE90B /* HistoryCVC.swift */,
+				31CDE49A25B6209B004DE90B /* GameHistoryVC.swift */,
+				31CDE4A225B620BB004DE90B /* GameHistoryCVC.swift */,
 			);
 			path = GameHistroyTab;
 			sourceTree = "<group>";
 		};
-		31CDE4A725B620D6004DE90B /* Score */ = {
+		31CDE4A725B620D6004DE90B /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				31CDE4A825B62270004DE90B /* Game.swift */,
 			);
-			path = Score;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		56931507203A2C47D34D42D4 /* Pods */ = {
@@ -348,8 +378,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31CDE4D125B65E38004DE90B /* BlackHanSans-Regular.ttf in Resources */,
+				31CDE4D325B65E38004DE90B /* NotoSansCJKkr-Regular.otf in Resources */,
+				31CDE4D425B65E38004DE90B /* NotoSansCJKkr-Thin.otf in Resources */,
+				31CDE4D225B65E38004DE90B /* NotoSansCJKkr-Bold.otf in Resources */,
 				31A9F95F25B562D400166B3E /* LaunchScreen.storyboard in Resources */,
 				31A9F95C25B562D400166B3E /* Assets.xcassets in Resources */,
+				31CDE4D025B65E38004DE90B /* NotoSansCJKkr-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,16 +452,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A9F95725B562D200166B3E /* ViewController.swift in Sources */,
-				31CDE4A325B620BB004DE90B /* HistoryCVC.swift in Sources */,
+				31CDE4D925B65E55004DE90B /* UIFont+.swift in Sources */,
+				31CDE4A325B620BB004DE90B /* GameHistoryCVC.swift in Sources */,
+				31CDE4B425B65D79004DE90B /* NewGameVC.swift in Sources */,
+				31CDE4C125B65D97004DE90B /* FrameCell.swift in Sources */,
 				31CDE46625B577C0004DE90B /* SplashView.swift in Sources */,
 				31CDE4A925B62270004DE90B /* Game.swift in Sources */,
 				31CDE47325B57846004DE90B /* UIViewController+.swift in Sources */,
 				31A9F95325B562D200166B3E /* AppDelegate.swift in Sources */,
 				31CDE48725B5F98D004DE90B /* MainTab.swift in Sources */,
 				31CDE46E25B57812004DE90B /* Global.swift in Sources */,
+				31CDE4ED25B69127004DE90B /* GameSection.swift in Sources */,
+				31CDE4BC25B65D8B004DE90B /* GameCVC.swift in Sources */,
 				31A9F95525B562D200166B3E /* SceneDelegate.swift in Sources */,
 				31CDE49425B5F9E5004DE90B /* UIImage+.swift in Sources */,
-				31CDE49B25B6209B004DE90B /* HistoryVC.swift in Sources */,
+				31CDE49B25B6209B004DE90B /* GameHistoryVC.swift in Sources */,
 				31CDE47825B57860004DE90B /* UIColor+.swift in Sources */,
 				31CDE48C25B5F9BA004DE90B /* MainTabVM.swift in Sources */,
 			);
