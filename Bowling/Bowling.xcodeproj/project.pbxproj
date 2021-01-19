@@ -18,6 +18,12 @@
 		31CDE46E25B57812004DE90B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE46D25B57812004DE90B /* Global.swift */; };
 		31CDE47325B57846004DE90B /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE47225B57846004DE90B /* UIViewController+.swift */; };
 		31CDE47825B57860004DE90B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE47725B57860004DE90B /* UIColor+.swift */; };
+		31CDE48725B5F98D004DE90B /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE48625B5F98D004DE90B /* MainTab.swift */; };
+		31CDE48C25B5F9BA004DE90B /* MainTabVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE48B25B5F9BA004DE90B /* MainTabVM.swift */; };
+		31CDE49425B5F9E5004DE90B /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE49325B5F9E5004DE90B /* UIImage+.swift */; };
+		31CDE49B25B6209B004DE90B /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE49A25B6209B004DE90B /* HistoryVC.swift */; };
+		31CDE4A325B620BB004DE90B /* HistoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4A225B620BB004DE90B /* HistoryCVC.swift */; };
+		31CDE4A925B62270004DE90B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4A825B62270004DE90B /* Game.swift */; };
 		525E48D9FA87C09832A78235 /* Pods_Bowling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE29ED6C519FC70033965D /* Pods_Bowling.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,12 @@
 		31CDE46D25B57812004DE90B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		31CDE47225B57846004DE90B /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		31CDE47725B57860004DE90B /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		31CDE48625B5F98D004DE90B /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		31CDE48B25B5F9BA004DE90B /* MainTabVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVM.swift; sourceTree = "<group>"; };
+		31CDE49325B5F9E5004DE90B /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		31CDE49A25B6209B004DE90B /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		31CDE4A225B620BB004DE90B /* HistoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCVC.swift; sourceTree = "<group>"; };
+		31CDE4A825B62270004DE90B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		81698A273552E453F798D411 /* Pods-Bowling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.release.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.release.xcconfig"; sourceTree = "<group>"; };
 		E11BDCB95FC444CCE2FCB557 /* Pods-Bowling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.debug.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +128,8 @@
 				31CDE45925B570B1004DE90B /* Fonts */,
 				31CDE45A25B570B7004DE90B /* Extenstions */,
 				31CDE46425B5777A004DE90B /* SplashView */,
+				31CDE4A725B620D6004DE90B /* Score */,
+				31CDE48525B5F969004DE90B /* MainTab */,
 			);
 			path = Bowling;
 			sourceTree = "<group>";
@@ -164,6 +178,7 @@
 				31CDE46D25B57812004DE90B /* Global.swift */,
 				31CDE47225B57846004DE90B /* UIViewController+.swift */,
 				31CDE47725B57860004DE90B /* UIColor+.swift */,
+				31CDE49325B5F9E5004DE90B /* UIImage+.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -174,6 +189,41 @@
 				31CDE46525B577C0004DE90B /* SplashView.swift */,
 			);
 			path = SplashView;
+			sourceTree = "<group>";
+		};
+		31CDE48525B5F969004DE90B /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				31CDE48625B5F98D004DE90B /* MainTab.swift */,
+				31CDE48B25B5F9BA004DE90B /* MainTabVM.swift */,
+				31CDE49825B6200E004DE90B /* NewGameTab */,
+				31CDE49925B6201B004DE90B /* GameHistroyTab */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		31CDE49825B6200E004DE90B /* NewGameTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewGameTab;
+			sourceTree = "<group>";
+		};
+		31CDE49925B6201B004DE90B /* GameHistroyTab */ = {
+			isa = PBXGroup;
+			children = (
+				31CDE49A25B6209B004DE90B /* HistoryVC.swift */,
+				31CDE4A225B620BB004DE90B /* HistoryCVC.swift */,
+			);
+			path = GameHistroyTab;
+			sourceTree = "<group>";
+		};
+		31CDE4A725B620D6004DE90B /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				31CDE4A825B62270004DE90B /* Game.swift */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 		56931507203A2C47D34D42D4 /* Pods */ = {
@@ -367,12 +417,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A9F95725B562D200166B3E /* ViewController.swift in Sources */,
+				31CDE4A325B620BB004DE90B /* HistoryCVC.swift in Sources */,
 				31CDE46625B577C0004DE90B /* SplashView.swift in Sources */,
+				31CDE4A925B62270004DE90B /* Game.swift in Sources */,
 				31CDE47325B57846004DE90B /* UIViewController+.swift in Sources */,
 				31A9F95325B562D200166B3E /* AppDelegate.swift in Sources */,
+				31CDE48725B5F98D004DE90B /* MainTab.swift in Sources */,
 				31CDE46E25B57812004DE90B /* Global.swift in Sources */,
 				31A9F95525B562D200166B3E /* SceneDelegate.swift in Sources */,
+				31CDE49425B5F9E5004DE90B /* UIImage+.swift in Sources */,
+				31CDE49B25B6209B004DE90B /* HistoryVC.swift in Sources */,
 				31CDE47825B57860004DE90B /* UIColor+.swift in Sources */,
+				31CDE48C25B5F9BA004DE90B /* MainTabVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
