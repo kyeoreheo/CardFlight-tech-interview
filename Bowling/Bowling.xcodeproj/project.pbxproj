@@ -34,6 +34,7 @@
 		31CDE4D425B65E38004DE90B /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 31CDE4CF25B65E38004DE90B /* NotoSansCJKkr-Thin.otf */; };
 		31CDE4D925B65E55004DE90B /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4D825B65E55004DE90B /* UIFont+.swift */; };
 		31CDE4ED25B69127004DE90B /* GameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4EC25B69127004DE90B /* GameSection.swift */; };
+		31CDE4F225B6968B004DE90B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CDE4F125B6968B004DE90B /* CustomView.swift */; };
 		525E48D9FA87C09832A78235 /* Pods_Bowling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE29ED6C519FC70033965D /* Pods_Bowling.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		31CDE4CF25B65E38004DE90B /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
 		31CDE4D825B65E55004DE90B /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		31CDE4EC25B69127004DE90B /* GameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSection.swift; sourceTree = "<group>"; };
+		31CDE4F125B6968B004DE90B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		81698A273552E453F798D411 /* Pods-Bowling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.release.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.release.xcconfig"; sourceTree = "<group>"; };
 		E11BDCB95FC444CCE2FCB557 /* Pods-Bowling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowling.debug.xcconfig"; path = "Target Support Files/Pods-Bowling/Pods-Bowling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +207,7 @@
 				31CDE47725B57860004DE90B /* UIColor+.swift */,
 				31CDE49325B5F9E5004DE90B /* UIImage+.swift */,
 				31CDE4D825B65E55004DE90B /* UIFont+.swift */,
+				31CDE4F125B6968B004DE90B /* CustomView.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				31CDE4C125B65D97004DE90B /* FrameCell.swift in Sources */,
 				31CDE46625B577C0004DE90B /* SplashView.swift in Sources */,
 				31CDE4A925B62270004DE90B /* Game.swift in Sources */,
+				31CDE4F225B6968B004DE90B /* CustomView.swift in Sources */,
 				31CDE47325B57846004DE90B /* UIViewController+.swift in Sources */,
 				31A9F95325B562D200166B3E /* AppDelegate.swift in Sources */,
 				31CDE48725B5F98D004DE90B /* MainTab.swift in Sources */,

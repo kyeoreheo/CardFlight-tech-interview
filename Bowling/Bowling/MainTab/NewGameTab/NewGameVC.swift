@@ -10,34 +10,52 @@ import SnapKit
 
 class NewGameVC: UIViewController {
     // MARK:- View components
+    private let plusButton = UIButton()
+    private let label = UILabel()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     var sections = [GameSection]()
 
     // MARK:- Properties
-    // MARK:- Lifecycles
+    
+    
+    // MARK:- Lifecycless
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         sections.append(GameSection(name: "kyo"))
         sections.append(GameSection(name: "Cat"))
         sections.append(GameSection(name: "Dog"))
 
         configureUI()
-        
-        
     }
     // MARK:- Configures
     func configureUI() {
+        view.addSubview(plusButton)
+        plusButton.setImage(UIImage(named: "plus"), for: .normal)
+        plusButton.snp.makeConstraints { make in
+            make.width.height.equalTo(30 * ratio)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
+            make.right.equalToSuperview().offset(-8)
+        }
+        
+        view.addSubview(label)
+        label.text = "Add new player"
+        label.font = .notoReg(size: 12 * ratio)
+        label.textAlignment = .right
+        label.snp.makeConstraints { make in
+            make.centerY.equalTo(plusButton)
+            make.right.equalTo(plusButton.snp.left).offset(-8)
+        }
+        
         view.addSubview(scrollView)
-        scrollView.backgroundColor = .orange
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(plusButton.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
         scrollView.addSubview(stackView)
-        stackView.backgroundColor = .purple
         stackView.axis = .vertical
         stackView.clipsToBounds = true
         stackView.spacing = 8
