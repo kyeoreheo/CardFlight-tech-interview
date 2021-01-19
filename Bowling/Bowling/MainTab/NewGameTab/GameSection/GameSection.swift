@@ -9,6 +9,7 @@ import UIKit
 
 class GameSection: UIViewController {
     let gameCVC = GameCVC()
+    let trialCVC = TrialCVC()
     let nameLabel = UILabel()
     
     init(name: String) {

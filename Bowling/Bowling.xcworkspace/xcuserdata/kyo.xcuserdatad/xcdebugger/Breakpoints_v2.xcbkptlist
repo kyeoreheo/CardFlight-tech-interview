@@ -3,22 +3,4 @@
    uuid = "FE0CECFE-DE0C-412D-807E-8E237F43083E"
    type = "0"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DFF688B7-FB77-4016-93FE-DC218B795C67"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bowling/MainTab/NewGameTab/GameCVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>
