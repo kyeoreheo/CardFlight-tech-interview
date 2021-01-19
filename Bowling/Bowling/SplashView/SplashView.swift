@@ -15,7 +15,28 @@ class SplashView: UIViewController {
         super.viewDidLoad()
         applyGlobalVariables()
         configureUI()
-        presentHomeVC()
+        
+        let myGame = Game()
+
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .seven)
+        myGame.addPoint(of: .spare)
+        myGame.addPoint(of: .nine)
+        myGame.addPoint(of: .miss)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .miss)
+        myGame.addPoint(of: .eight)
+        myGame.addPoint(of: .eight)
+        myGame.addPoint(of: .spare)
+        myGame.addPoint(of: .miss)
+        myGame.addPoint(of: .six)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .eight)
+        myGame.addPoint(of: .one)
+
+        myGame.boardInfo()
     }
     
     private func configureUI() {
@@ -31,13 +52,14 @@ class SplashView: UIViewController {
         }
     }
     
-    private func presentHomeVC() {
-//        DispatchQueue.main.async {
-//            let navigation = UINavigationController(rootViewController: HomeVC())
-//            navigation.modalPresentationStyle = .fullScreen
-//            navigation.navigationBar.isHidden = true
-//            self.present(navigation, animated: false, completion: nil)
-//        }
+    private func presentMainTabBar() {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            let navigation = UINavigationController(rootViewController: MainTabBar())
+            navigation.modalPresentationStyle = .fullScreen
+            navigation.navigationBar.isHidden = true
+            strongSelf.present(navigation, animated: false, completion: nil)
+        }
     }
     
     // MARK:- Helpers
