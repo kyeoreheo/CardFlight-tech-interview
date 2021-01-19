@@ -38,7 +38,7 @@ class GameSection: UIViewController {
         gameCVC.collectionView.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
             make.width.equalTo(view.frame.width)
-            make.height.equalTo(200)
+            make.height.equalTo(150 * ratio + 10)
             make.left.right.bottom.equalToSuperview()
         }
         

@@ -14,7 +14,7 @@ var phoneWidth: CGFloat = 0
 
 struct Frame {
     var number: Int
-    var points = [Point.miss, Point.miss, Point.miss]
+    var points = [Point.idle, Point.idle, Point.idle]
     var score = 0
     var cumulativeScore = 0
 }
@@ -26,6 +26,7 @@ struct BonusPoint {
 }
 
 enum Point: Int {
+    case idle = -1
     case miss = 0
     case one = 1
     case two = 2
@@ -38,4 +39,19 @@ enum Point: Int {
     case nine = 9
     case strike = 10
     case spare = 11
+}
+
+func pointToString(_ point: Point) -> String {
+    switch point {
+    case .idle:
+        return "N/A"
+    case .miss:
+        return "-"
+    case .strike:
+        return "X"
+    case .spare:
+        return "/"
+    default:
+        return String(point.rawValue)
+    }
 }

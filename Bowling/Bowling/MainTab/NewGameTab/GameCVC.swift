@@ -12,9 +12,10 @@ class GameCVC: UICollectionViewController {
     // MARK:- Properties
     weak var delegate: FrameCellDelegate?
     private let reuseIdentifier = "frameCell"
-    public var board = Game().board {
+    public var game = Game()
+    public lazy var board = game.board {
         didSet {
-            
+            collectionView.reloadData()
         }
     }
     // MARK:- Lifecycles
@@ -31,12 +32,36 @@ class GameCVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        test1()
         configure()
     }
+    
+    func test1() {
+        game.addPoint(of: .strike)
+        game.addPoint(of: .seven)
+        game.addPoint(of: .spare)
+        game.addPoint(of: .nine)
+        game.addPoint(of: .miss)
+        
+//        game.addPoint(of: .strike)
+//        game.addPoint(of: .miss)
+//        game.addPoint(of: .eight)
+//        game.addPoint(of: .eight)
+//        game.addPoint(of: .spare)
+//        game.addPoint(of: .miss)
+//        game.addPoint(of: .six)
+//        game.addPoint(of: .strike)
+//        game.addPoint(of: .strike)
+//        game.addPoint(of: .strike)
+//        game.addPoint(of: .eight)
+//        game.addPoint(of: .one)
+    }
+    
     // MARK:- Configuress
     private func configure() {
         collectionView.backgroundColor = .green
         collectionView.register(FrameCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.showsHorizontalScrollIndicator = false
     }
 }
 
@@ -44,27 +69,35 @@ class GameCVC: UICollectionViewController {
 extension GameCVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 150, height: 150)
+        return CGSize(width: 150 * ratio, height: 150 * ratio)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return board.count
+        return game.board.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FrameCell
-//
-//        let currentItem = products[indexPath.row]
-//        cell.viewModel.filterValues(productName: currentItem.title,
-//             imageStringURLs: currentItem.images,
-//             merchant: currentItem.merchant,
-//             createdAt: currentItem.createdAt,
-//             websiteURL: currentItem.url)
-//        cell.delegate = delegate
-//        cell.product = products[indexPath.row]
-//
-        cell.frameLabel.text = String(indexPath.row)
+        
+        cell.frameLabel.text = String(game.board[indexPath.row].number)
+        cell.firstTrialLabel.text = pointToString(game.board[indexPath.row].points[0])
+        cell.cumulativePointLabel.text = String(game.board[indexPath.row
+        ].cumulativeScore)
+        
+        if game.board[indexPath.row].points[1] != .idle {
+            if game.board[indexPath.row].points[0].rawValue + game.board[indexPath.row].points[1].rawValue == 10 {
+                cell.secondTrialLabel.text = pointToString(.spare)
+            } else {
+                cell.secondTrialLabel.text = pointToString(game.board[indexPath.row].points[1])
+            }
+        }
+
+        cell.delegate = delegate
+        cell.parent = self
+        cell.index = indexPath.row
+        cell.cover.isHidden = cell.firstTrialLabel.text == "N/A"
+        
         return cell
     }
     

@@ -8,10 +8,10 @@
 import Foundation
 
 class Game {
-    public var board = Array<Frame>()
+    public var board = [Frame]()
     
-    private var currentFrame = 0
-    private var currentTrial = 0
+    private(set) var currentFrame = 0
+    private(set) var currentTrial = 0
     private var bonusPointQueue = Array<BonusPoint>()
     
     init() {
@@ -82,6 +82,5 @@ class Game {
             }
         }
     }
-    
     
 }
