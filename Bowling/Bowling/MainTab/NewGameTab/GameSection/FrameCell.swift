@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol FrameCellDelegate: class {
-    func firstTrialButton(board: inout [Frame], index: Int)
-    func secondTrailButton()
-    func thirdTrailButton()
-}
+//protocol FrameCellDelegate: class {
+//    func firstTrialButton(board: inout [Frame], index: Int)
+//    func secondTrailButton()
+//    func thirdTrailButton()
+//}
 
 class FrameCell: UICollectionViewCell {
     // MARK:- View components
@@ -24,7 +24,7 @@ class FrameCell: UICollectionViewCell {
     let cover = UIView()
     
     // MARK:- Properties
-    weak var delegate: FrameCellDelegate?
+//    weak var delegate: FrameCellDelegate?
     public var parent: GameCVC?
     public var index = 0
 

@@ -24,7 +24,7 @@ class NewGameVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         let gameSection = GameSection(name: "Kyo")
-        gameSection.gameCVC.delegate = self
+//        gameSection.gameCVC.delegate = self
         sections.append(gameSection)
         sections.append(GameSection(name: "Cat"))
         sections.append(GameSection(name: "Dog"))
@@ -72,19 +72,19 @@ class NewGameVC: UIViewController {
     }
 }
 
-extension NewGameVC: FrameCellDelegate {
-    func firstTrialButton(board: inout [Frame], index: Int) {
-        board[index].points[0] = .eight
-        print("DEBUG:- firstButon Tapped")
-
-    }
-    
-    func secondTrailButton() {
-        print("DEBUG:- second Tapped")
-    }
-    
-    func thirdTrailButton() {
-        print("DEBUG:- thrid Tapped")
-    }
-    
-}
+//extension NewGameVC: FrameCellDelegate {
+//    func firstTrialButton(board: inout [Frame], index: Int) {
+//        board[index].points[0] = .eight
+//        print("DEBUG:- firstButon Tapped")
+//
+//    }
+//
+//    func secondTrailButton() {
+//        print("DEBUG:- second Tapped")
+//    }
+//
+//    func thirdTrailButton() {
+//        print("DEBUG:- thrid Tapped")
+//    }
+//
+//}

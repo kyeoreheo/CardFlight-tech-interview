@@ -13,7 +13,7 @@ class GameCVC: UICollectionViewController {
     public var game = Game()
     public var cumulativeScore: UILabel?
     
-    weak var delegate: FrameCellDelegate?
+//    weak var delegate: FrameCellDelegate?
     private let reuseIdentifier = "frameCell"
     
     // MARK:- Lifecycles
@@ -103,7 +103,7 @@ extension GameCVC: UICollectionViewDelegateFlowLayout {
             cell.secondTrialLabel.text = ""
         }
 
-        cell.delegate = delegate
+//        cell.delegate = delegate
         cell.parent = self
         cell.index = indexPath.row
         cell.cover.isHidden = game.currentFrame != indexPath.row
