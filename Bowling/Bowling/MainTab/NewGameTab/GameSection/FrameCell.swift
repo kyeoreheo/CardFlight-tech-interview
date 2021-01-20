@@ -66,16 +66,20 @@ class FrameCell: UICollectionViewCell {
 
         addSubview(cumulativePointLabel)
         cumulativePointLabel.textColor = .black
+        cumulativePointLabel.layer.borderWidth = 1
+        cumulativePointLabel.layer.borderColor = UIColor.gray3.cgColor
         cumulativePointLabel.font = .notoBold(size: 40 * ratio)
         cumulativePointLabel.textAlignment = .center
         cumulativePointLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-10 * ratio)
+            make.top.equalTo(stackView.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+//            make.bottom.equalToSuperview().offset(-10 * ratio)
         }
         
         addSubview(cover)
-        cover.backgroundColor = .black
-        cover.alpha = 0.3
+        cover.backgroundColor = .clear
+        cover.layer.borderWidth = 4
+        cover.layer.borderColor = UIColor.orange.cgColor
         cover.snp.makeConstraints { make in
             make.top.left.bottom.right.equalToSuperview()
         }
@@ -83,8 +87,6 @@ class FrameCell: UICollectionViewCell {
     
     private func configureLabels() {
         stackView.addArrangedSubview(firstTrialLabel)
-        firstTrialLabel.isUserInteractionEnabled = true
-        firstTrialLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(firstTrialButtonTapped)))
         firstTrialLabel.layer.borderWidth = 1
         firstTrialLabel.layer.borderColor = UIColor.gray3.cgColor
         firstTrialLabel.textAlignment = .center
@@ -92,8 +94,6 @@ class FrameCell: UICollectionViewCell {
         firstTrialLabel.font = .notoReg(size: 30 * ratio)
         
         stackView.addArrangedSubview(secondTrialLabel)
-        secondTrialLabel.isUserInteractionEnabled = true
-        secondTrialLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(secondTrialButtonTapped)))
         secondTrialLabel.layer.borderWidth = 1
         secondTrialLabel.layer.borderColor = UIColor.gray3.cgColor
         secondTrialLabel.textAlignment = .center
@@ -101,18 +101,4 @@ class FrameCell: UICollectionViewCell {
         secondTrialLabel.font = .notoReg(size: 30 * ratio)
     }
     
-    
-    @objc func firstTrialButtonTapped() {
-        //parent?.board[0].points[0] = .eight
-        guard let parent = parent else { return }
-        delegate?.firstTrialButton(board: &parent.board, index: index)
-    }
-    
-    @objc func secondTrialButtonTapped() {
-        delegate?.secondTrailButton()
-    }
-    
-    @objc func thirdTrialButtonTapped() {
-        delegate?.thirdTrailButton()
-    }
 }

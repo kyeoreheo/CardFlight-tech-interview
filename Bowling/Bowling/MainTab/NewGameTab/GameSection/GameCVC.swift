@@ -10,14 +10,12 @@ import UIKit
 class GameCVC: UICollectionViewController {
     // MARK:- View components
     // MARK:- Properties
+    public var game = Game()
+    public var cumulativeScore: UILabel?
+    
     weak var delegate: FrameCellDelegate?
     private let reuseIdentifier = "frameCell"
-    public var game = Game()
-    public lazy var board = game.board {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    
     // MARK:- Lifecycles
     override init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()) {
         let myLayout = UICollectionViewFlowLayout()
@@ -37,11 +35,11 @@ class GameCVC: UICollectionViewController {
     }
     
     func test1() {
-        game.addPoint(of: .strike)
-        game.addPoint(of: .seven)
-        game.addPoint(of: .spare)
-        game.addPoint(of: .nine)
-        game.addPoint(of: .miss)
+//        game.addPoint(of: .strike)
+//        game.addPoint(of: .seven)
+//        game.addPoint(of: .spare)
+//        game.addPoint(of: .nine)
+//        game.addPoint(of: .miss)
         
 //        game.addPoint(of: .strike)
 //        game.addPoint(of: .miss)
@@ -56,12 +54,22 @@ class GameCVC: UICollectionViewController {
 //        game.addPoint(of: .eight)
 //        game.addPoint(of: .one)
     }
-    
-    // MARK:- Configuress
+
+    // MARK:- Configures
     private func configure() {
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .white
         collectionView.register(FrameCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    // MARK: - Helpers
+    public func addPoint(of point: Point) {
+        game.addPoint(of: point)
+        collectionView.reloadData()
+        let indexPath = IndexPath(item: game.currentFrame, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        cumulativeScore?.text = "SCORE:  \(String(game.board[game.currentFrame].cumulativeScore))"
     }
 }
 
@@ -91,12 +99,14 @@ extension GameCVC: UICollectionViewDelegateFlowLayout {
             } else {
                 cell.secondTrialLabel.text = pointToString(game.board[indexPath.row].points[1])
             }
+        }  else {
+            cell.secondTrialLabel.text = ""
         }
 
         cell.delegate = delegate
         cell.parent = self
         cell.index = indexPath.row
-        cell.cover.isHidden = cell.firstTrialLabel.text == "N/A"
+        cell.cover.isHidden = game.currentFrame != indexPath.row
         
         return cell
     }

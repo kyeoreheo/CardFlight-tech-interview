@@ -6,13 +6,16 @@
 //
 
 import UIKit
+protocol TrialCVCDelegate: class {
+    func trialCellTapped(index: Int, point: Point)
+}
 
-class TrialCVC: UICollectionViewController {
-    // MARK:- View components
+class TrialCVC: UICollectionViewController {    
     // MARK:- Properties
-    weak var delegate: TrialCellDelegate?
+    weak var delegate: TrialCVCDelegate?
     private let reuseIdentifier = "trialCells"
     public var trials: [Point] = [.strike, .spare, .miss, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine]
+    public var game: Game?
 
     // MARK:- Lifecycles
     override init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()) {
@@ -33,17 +36,19 @@ class TrialCVC: UICollectionViewController {
     
     // MARK:- Configuress
     private func configure() {
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .white
         collectionView.register(TrialCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.showsHorizontalScrollIndicator = false
     }
+    
 }
 
 // MARK:- Extentions
 extension TrialCVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 150 * ratio, height: 50 * ratio)
+        return CGSize(width: 40 * ratio, height: 40 * ratio)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,11 +57,21 @@ extension TrialCVC: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TrialCell
-        
-        cell.delegate = delegate
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TrialCell,
+              let game = game
+        else { return UICollectionViewCell() }
+
+        cell.trialLabel.text = pointToString(trials[indexPath.row])
+        cell.cover.isHidden = game.isValid(ifAdd: trials[indexPath.row])
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let game = game else { return }
+        if game.isValid(ifAdd: trials[indexPath.row]) {
+            delegate?.trialCellTapped(index: indexPath.row, point: trials[indexPath.row])
+            collectionView.reloadData()
+        }
     }
     
 }

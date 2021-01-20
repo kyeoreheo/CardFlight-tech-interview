@@ -11,6 +11,7 @@ class GameSection: UIViewController {
     let gameCVC = GameCVC()
     let trialCVC = TrialCVC()
     let nameLabel = UILabel()
+    let cumulativeScore = UILabel()
     
     init(name: String) {
         super.init(nibName: nil, bundle: nil)
@@ -23,16 +24,36 @@ class GameSection: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
         configureUI()
+    }
+    
+    private func configure() {
+        view.backgroundColor = .white
+        gameCVC.cumulativeScore = cumulativeScore
+        trialCVC.delegate = self
+        trialCVC.game = gameCVC.game
     }
     
     private func configureUI() {
         view.addSubview(nameLabel)
-        nameLabel.font = .notoBold(size: 20 * ratio)
+        nameLabel.font = .notoBold(size: 25 * ratio)
         nameLabel.snp.makeConstraints { make in
-            make.width.equalTo(view.frame.width)
-            make.height.equalTo(30 * ratio)
-            make.top.left.right.equalToSuperview()
+//            make.width.equalTo(view.frame.width)
+            make.height.equalTo(35 * ratio)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+        }
+        
+        view.addSubview(cumulativeScore)
+        cumulativeScore.text = "SCORE: 0"
+        cumulativeScore.textAlignment = .right
+        cumulativeScore.textColor = .gray7
+        cumulativeScore.font = .notoBold(size: 20 * ratio)
+        cumulativeScore.snp.makeConstraints { make in
+            make.height.equalTo(35 * ratio)
+            make.top.equalToSuperview()
+            make.right.equalToSuperview().offset(-16)
         }
         
         view.addSubview(gameCVC.collectionView)
@@ -40,9 +61,22 @@ class GameSection: UIViewController {
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
             make.width.equalTo(view.frame.width)
             make.height.equalTo(150 * ratio + 10)
+            make.left.right.equalToSuperview()
+        }
+        
+        view.addSubview(trialCVC.collectionView)
+        trialCVC.collectionView.snp.makeConstraints { make in
+            make.top.equalTo(gameCVC.collectionView.snp.bottom).offset(4)
+            make.height.equalTo(40 * ratio)
             make.left.right.bottom.equalToSuperview()
         }
         
     }
     
+}
+
+extension GameSection: TrialCVCDelegate {
+    func trialCellTapped(index: Int, point: Point) {
+        gameCVC.addPoint(of: point)
+    }
 }

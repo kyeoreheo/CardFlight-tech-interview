@@ -24,7 +24,7 @@ class Game {
         var tempPoint = point
         let maxTrial = currentFrame < board.count - 1 ? 1 : 2
 
-        if point == .spare {
+        if isSpare(when: point) {
             tempPoint = Point(rawValue: 10 - board[currentFrame].points[currentTrial - 1].rawValue) ?? .miss
         }
         
@@ -47,6 +47,24 @@ class Game {
         }
     }
     
+    public func isValid(ifAdd point: Point) -> Bool {
+        if currentTrial == 0 && isSpare(when: point) {
+            return false
+        } else if currentTrial > 0 && point == .strike {
+            return false
+        } else if currentTrial > 0 && point != .spare && board[currentFrame].points[currentTrial - 1].rawValue + point.rawValue > 10 {
+            return false
+        }
+
+        return true
+    }
+    
+    private func isSpare(when point: Point) -> Bool {
+        return point == .spare ||
+            (currentTrial > 0 && board[currentFrame].points[currentTrial - 1].rawValue
+                + point.rawValue == 10)
+    }
+    
     private func calculateBonusPonits(of point: Point) {
         var index = 0
         while index < bonusPointQueue.count {
@@ -65,7 +83,7 @@ class Game {
         if point == .strike  && currentFrame < board.count - 1 {
             bonusPointQueue.append(BonusPoint(type: .strike, frame: currentFrame, count: 2))
             currentTrial = 2
-        } else if point == .spare && currentFrame < board.count - 1 {
+        } else if isSpare(when: point) && currentFrame < board.count - 1 {
             bonusPointQueue.append(BonusPoint(type: .spare, frame: currentFrame, count: 1))
             currentTrial += 1
         } else {

@@ -7,22 +7,12 @@
 
 import UIKit
 
-protocol TrialCellDelegate: class {
-
-}
-
 class TrialCell: UICollectionViewCell {
     // MARK:- View components
-    let frameLabel = UILabel()
-    let stackView = UIStackView()
-    let firstTrialLabel = UILabel()
-    let secondTrialLabel = UILabel()
-    let thirdTrialLabel = UILabel()
-    let cumulativePointLabel = UILabel()
+    let trialLabel = UILabel()
     let cover = UIView()
     
     // MARK:- Properties
-    weak var delegate: TrialCellDelegate?
 
     // MARK:- Lifecycles
     override init(frame: CGRect) {
@@ -38,7 +28,23 @@ class TrialCell: UICollectionViewCell {
     
     // MARK:- Configures
     private func configureUI() {
-        backgroundColor = .blue
+        addSubview(trialLabel)
+        trialLabel.layer.borderWidth = 2
+        trialLabel.layer.borderColor = UIColor.gray3.cgColor
+        trialLabel.layer.cornerRadius = 5
+        trialLabel.font = .notoBold(size: 30 * ratio)
+        trialLabel.textColor = .gray6
+        trialLabel.textAlignment = .center
+        trialLabel.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
+        
+        addSubview(cover)
+        cover.backgroundColor = .black
+        cover.alpha = 0.3
+        cover.snp.makeConstraints { make in
+            make.top.left.bottom.right.equalToSuperview()
+        }
     }
 
 }
