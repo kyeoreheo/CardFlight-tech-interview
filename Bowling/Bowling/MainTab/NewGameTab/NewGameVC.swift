@@ -10,7 +10,7 @@ import SnapKit
 
 class NewGameVC: UIViewController {
     // MARK:- View components
-    private let plusButton = UIButton()
+    private let saveButton = UIButton()
     private let label = UILabel()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
@@ -33,28 +33,29 @@ class NewGameVC: UIViewController {
     func configureUI() {
         view.backgroundColor = .white
         
-        view.addSubview(plusButton)
-        plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
-        plusButton.setImage(UIImage(named: "plus"), for: .normal)
-        plusButton.snp.makeConstraints { make in
+        view.addSubview(saveButton)
+        saveButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+        saveButton.setImage(UIImage(named: "save"), for: .normal)
+        saveButton.snp.makeConstraints { make in
             make.width.height.equalTo(30 * ratio)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
             make.right.equalToSuperview().offset(-8)
         }
         
         view.addSubview(label)
-        label.text = "Add new player"
+        label.text = "Save"
+        label.textColor = .black
         label.font = .notoReg(size: 12 * ratio)
         label.textAlignment = .right
         label.snp.makeConstraints { make in
-            make.centerY.equalTo(plusButton)
-            make.right.equalTo(plusButton.snp.left).offset(-8)
+            make.centerY.equalTo(saveButton)
+            make.right.equalTo(saveButton.snp.left).offset(-8)
         }
         
         view.addSubview(scrollView)
         scrollView.backgroundColor = .white
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(plusButton.snp.bottom)
+            make.top.equalTo(saveButton.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
