@@ -7,12 +7,6 @@
 
 import UIKit
 
-//protocol FrameCellDelegate: class {
-//    func firstTrialButton(board: inout [Frame], index: Int)
-//    func secondTrailButton()
-//    func thirdTrailButton()
-//}
-
 class FrameCell: UICollectionViewCell {
     // MARK:- View components
     let frameLabel = UILabel()
@@ -74,7 +68,6 @@ class FrameCell: UICollectionViewCell {
         cumulativePointLabel.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
-//            make.bottom.equalToSuperview().offset(-10 * ratio)
         }
         
         addSubview(cover)
@@ -108,7 +101,5 @@ class FrameCell: UICollectionViewCell {
         thirdTrialLabel.textColor = .black
         thirdTrialLabel.font = .notoReg(size: 20 * ratio)
     }
-    
-    
     
 }

@@ -8,12 +8,9 @@
 import UIKit
 
 class GameCVC: UICollectionViewController {
-    // MARK:- View components
     // MARK:- Properties
     public var game = Game()
     public var cumulativeScore: UILabel?
-    
-//    weak var delegate: FrameCellDelegate?
     private let reuseIdentifier = "frameCell"
     
     // MARK:- Lifecycles

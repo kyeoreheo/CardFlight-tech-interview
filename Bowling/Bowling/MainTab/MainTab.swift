@@ -30,9 +30,7 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
 
         let newGameTab = viewModel.barTabView(view: NewGameVC(), image: "bowling")
         let historyTab = viewModel.barTabView(view: GameHistoryVC(), image: "history")
-//        let orderTab =
-//        let myPageTab = viewModel.barTabView(view: MyPageVC(), image: "setting")
-//
+        
         viewControllers = [newGameTab, historyTab]
     }
     

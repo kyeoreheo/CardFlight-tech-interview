@@ -22,9 +22,7 @@ class NewGameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let gameSection = GameSection(name: "Player 1")
-//        gameSection.gameCVC.delegate = self
-        sections.append(gameSection)
+        sections.append(GameSection(name: "Player 1"))
         sections.append(GameSection(name: "Player 2"))
         sections.append(GameSection(name: "Player 3"))
 
@@ -33,6 +31,8 @@ class NewGameVC: UIViewController {
     
     // MARK:- Configures
     func configureUI() {
+        view.backgroundColor = .white
+        
         view.addSubview(plusButton)
         plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         plusButton.setImage(UIImage(named: "plus"), for: .normal)
@@ -52,6 +52,7 @@ class NewGameVC: UIViewController {
         }
         
         view.addSubview(scrollView)
+        scrollView.backgroundColor = .white
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(plusButton.snp.bottom)
             make.left.right.equalToSuperview()
@@ -59,12 +60,14 @@ class NewGameVC: UIViewController {
         }
         
         scrollView.addSubview(stackView)
+        stackView.backgroundColor = .white
         stackView.axis = .vertical
         stackView.clipsToBounds = true
         stackView.spacing = 8
         stackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
-            make.left.right.equalToSuperview()
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
             make.bottom.equalToSuperview().offset(-8)
         }
         

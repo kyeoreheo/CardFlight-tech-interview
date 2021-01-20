@@ -12,8 +12,6 @@ class TrialCell: UICollectionViewCell {
     let trialLabel = UILabel()
     let cover = UIView()
     
-    // MARK:- Properties
-
     // MARK:- Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)

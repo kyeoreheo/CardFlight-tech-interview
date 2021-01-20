@@ -45,13 +45,13 @@ class SplashView: UIViewController {
     private func configureUI() {
         view.backgroundColor = .orange
 //
-//        view.addSubview(label)
-//        label.text = "CardFlight Tech Challenge"
-//        label.textColor = .white
-//        label.snp.makeConstraints { make in
-//            make.height.equalTo(50)
-//            make.center.equalToSuperview()
-//        }
+        view.addSubview(label)
+        label.text = "CardFlight Tech Challenge"
+        label.textColor = .white
+        label.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.center.equalToSuperview()
+        }
     }
     
     private func presentMainTabBar() {

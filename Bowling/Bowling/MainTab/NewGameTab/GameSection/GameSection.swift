@@ -37,9 +37,9 @@ class GameSection: UIViewController {
     
     private func configureUI() {
         view.addSubview(nameLabel)
+        nameLabel.textColor = .black
         nameLabel.font = .notoBold(size: 25 * ratio)
         nameLabel.snp.makeConstraints { make in
-//            make.width.equalTo(view.frame.width)
             make.height.equalTo(35 * ratio)
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(16)
@@ -70,7 +70,6 @@ class GameSection: UIViewController {
             make.height.equalTo(40 * ratio)
             make.left.right.bottom.equalToSuperview()
         }
-        
     }
     
 }
