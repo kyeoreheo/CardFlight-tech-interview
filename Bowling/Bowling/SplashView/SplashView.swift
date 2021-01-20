@@ -18,34 +18,36 @@ class SplashView: UIViewController {
         
         let myGame = Game()
 
-        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .miss)
+        myGame.addPoint(of: .spare)
+        myGame.addPoint(of: .four)
+        myGame.addPoint(of: .spare)
         myGame.addPoint(of: .seven)
         myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .nine)
-        myGame.addPoint(of: .miss)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .miss)
-        myGame.addPoint(of: .eight)
-        myGame.addPoint(of: .eight)
+        myGame.addPoint(of: .five)
         myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .miss)
-        myGame.addPoint(of: .six)
+        myGame.addPoint(of: .seven)
+        myGame.addPoint(of: .spare)
         myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .eight)
+        myGame.addPoint(of: .seven)
         myGame.addPoint(of: .one)
+        myGame.addPoint(of: .six)
+        myGame.addPoint(of: .spare)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .strike)
+        myGame.addPoint(of: .strike)
 
         myGame.boardInfo()
+        presentMainTabBar()
     }
     
     private func configureUI() {
         view.backgroundColor = .orange
-        
+//
         view.addSubview(label)
         label.text = "CardFlight Tech Challenge"
         label.textColor = .white
-//        label.font = .gothicReg(size: 12)
         label.snp.makeConstraints { make in
             make.height.equalTo(50)
             make.center.equalToSuperview()

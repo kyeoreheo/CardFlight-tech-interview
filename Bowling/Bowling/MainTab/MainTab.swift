@@ -28,11 +28,10 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         tabBar.barTintColor = .white
         tabBar.tintColor = .orange
 
-//        let homeTab = viewModel.barTabView(view: HomeVC(), image: "home")
-//        let orderTab = viewModel.barTabView(view: OrderVC(), image: "order")
-//        let myPageTab = viewModel.barTabView(view: MyPageVC(), image: "setting")
-//
-//        viewControllers = [homeTab, orderTab, myPageTab]
+        let newGameTab = viewModel.barTabView(view: NewGameVC(), image: "bowling")
+        let historyTab = viewModel.barTabView(view: GameHistoryVC(), image: "history")
+        
+        viewControllers = [newGameTab, historyTab]
     }
     
 }
