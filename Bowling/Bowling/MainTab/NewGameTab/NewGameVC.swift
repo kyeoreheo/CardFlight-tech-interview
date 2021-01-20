@@ -18,16 +18,15 @@ class NewGameVC: UIViewController {
 
     // MARK:- Properties
     
-    
     // MARK:- Lifecycless
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let gameSection = GameSection(name: "Kyo")
+        let gameSection = GameSection(name: "Player 1")
 //        gameSection.gameCVC.delegate = self
         sections.append(gameSection)
-        sections.append(GameSection(name: "Cat"))
-        sections.append(GameSection(name: "Dog"))
+        sections.append(GameSection(name: "Player 2"))
+        sections.append(GameSection(name: "Player 3"))
 
         configureUI()
     }
@@ -35,6 +34,7 @@ class NewGameVC: UIViewController {
     // MARK:- Configures
     func configureUI() {
         view.addSubview(plusButton)
+        plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         plusButton.setImage(UIImage(named: "plus"), for: .normal)
         plusButton.snp.makeConstraints { make in
             make.width.height.equalTo(30 * ratio)
@@ -63,29 +63,17 @@ class NewGameVC: UIViewController {
         stackView.clipsToBounds = true
         stackView.spacing = 8
         stackView.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalToSuperview()
+            make.top.equalToSuperview().offset(8)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-8)
         }
         
         sections.forEach {
             stackView.addArrangedSubview($0.view)
         }
-  
+    }
+    
+    @objc func plusButtonTapped() {
+        stackView.addArrangedSubview(GameSection(name: "New Player").view)
     }
 }
-
-//extension NewGameVC: FrameCellDelegate {
-//    func firstTrialButton(board: inout [Frame], index: Int) {
-//        board[index].points[0] = .eight
-//        print("DEBUG:- firstButon Tapped")
-//
-//    }
-//
-//    func secondTrailButton() {
-//        print("DEBUG:- second Tapped")
-//    }
-//
-//    func thirdTrailButton() {
-//        print("DEBUG:- thrid Tapped")
-//    }
-//
-//}
