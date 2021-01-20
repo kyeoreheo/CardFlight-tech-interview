@@ -69,7 +69,14 @@ class GameCVC: UICollectionViewController {
         collectionView.reloadData()
         let indexPath = IndexPath(item: game.currentFrame, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
-        cumulativeScore?.text = "SCORE:  \(String(game.board[game.currentFrame].cumulativeScore))"
+        if game.isDone() {
+            cumulativeScore?.text = "Final Score:  \(String(game.board[game.currentFrame].cumulativeScore))"
+            cumulativeScore?.textColor = .orange
+        } else {
+            cumulativeScore?.text = "Score:  \(String(game.board[game.currentFrame].cumulativeScore))"
+            cumulativeScore?.textColor = .gray7
+        }
+
     }
 }
 
@@ -103,11 +110,26 @@ extension GameCVC: UICollectionViewDelegateFlowLayout {
             cell.secondTrialLabel.text = ""
         }
 
-//        cell.delegate = delegate
         cell.parent = self
         cell.index = indexPath.row
         cell.cover.isHidden = game.currentFrame != indexPath.row
-        
+        if indexPath.row == game.board.count - 1 {
+            cell.thirdTrialLabel.isHidden = false
+            cell.firstTrialLabel.font = .notoReg(size: 20 * ratio)
+            cell.secondTrialLabel.font = .notoReg(size: 20 * ratio)
+            
+            if game.board[indexPath.row].points[2] != .idle {
+                cell.thirdTrialLabel.text = pointToString(game.board[indexPath.row].points[2])
+            } else {
+                cell.thirdTrialLabel.text = ""
+            }
+        } else {
+            cell.thirdTrialLabel.isHidden = true
+            cell.firstTrialLabel.font = .notoReg(size: 30 * ratio)
+            cell.secondTrialLabel.font = .notoReg(size: 30 * ratio)
+            cell.thirdTrialLabel.text = ""
+        }
+
         return cell
     }
     

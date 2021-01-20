@@ -13,6 +13,7 @@ class Game {
     private(set) var currentFrame = 0
     private(set) var currentTrial = 0
     private var bonusPointQueue = Array<BonusPoint>()
+//    private(set) var done = false
     
     init() {
         for i in 1...10 {
@@ -21,24 +22,34 @@ class Game {
     }
     
     public func addPoint(of point: Point) {
-        var tempPoint = point
-        let maxTrial = currentFrame < board.count - 1 ? 1 : 2
+        if !isDone() {
+            if currentFrame == 9 &&  (board[9].points[0].rawValue + board[9].points[1].rawValue >= 10) {
+                board[9].points[2] = point
+                board[9].cumulativeScore += point.rawValue
+            } else {
+                var tempPoint = point
+                let maxTrial = currentFrame < board.count - 1 ? 1 : 2
 
-        if isSpare(when: point) {
-            tempPoint = Point(rawValue: 10 - board[currentFrame].points[currentTrial - 1].rawValue) ?? .miss
+                if isSpare(when: point) {
+                    tempPoint = Point(rawValue: 10 - board[currentFrame].points[currentTrial - 1].rawValue) ?? .miss
+                }
+                
+                board[currentFrame].score += tempPoint.rawValue
+                board[currentFrame].points[currentTrial] = tempPoint
+                calculateBonusPonits(of: tempPoint)
+                appendBonusPointQueueIfNeeded(of: point)
+                
+                if currentTrial > maxTrial {
+                    currentTrial = 0
+                    currentFrame += 1
+                }
+                
+                calculatedCumulativeScore()
+            }
         }
         
-        board[currentFrame].score += tempPoint.rawValue
-        board[currentFrame].points[currentTrial] = tempPoint
-        calculateBonusPonits(of: tempPoint)
-        appendBonusPointQueueIfNeeded(of: point)
-        
-        if currentTrial > maxTrial {
-            currentTrial = 0
-            currentFrame += 1
-        }
 
-        calculatedCumulativeScore()
+        boardInfo()
     }
     
     public func boardInfo() {
@@ -48,6 +59,14 @@ class Game {
     }
     
     public func isValid(ifAdd point: Point) -> Bool {
+        if currentFrame == 9 && board[9].points[0].rawValue + board[9].points[1].rawValue == 10 {
+            if point == .spare {
+                return false
+            }
+            
+            return true
+        }
+        
         if currentTrial == 0 && isSpare(when: point) {
             return false
         } else if currentTrial > 0 && point == .strike {
@@ -77,6 +96,22 @@ class Game {
                 index += 1
             }
         }
+    }
+    
+    public func isDone() -> Bool {
+        if currentFrame == 9 && board[9].points[0] != .idle && board[9].points[1] != .idle {
+            if board[9].points[2] != .idle {
+                return true
+            } else if board[9].points[0].rawValue
+                + board[9].points[1].rawValue == 10 {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
+    
     }
     
     private func appendBonusPointQueueIfNeeded(of point: Point) {

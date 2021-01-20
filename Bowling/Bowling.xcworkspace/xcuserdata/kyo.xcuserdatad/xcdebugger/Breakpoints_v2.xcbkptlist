@@ -7,48 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AF5F3D25-186B-4113-BD95-5891463C2915"
+            uuid = "B4DFA092-BA3C-48D4-8CFE-16CB792B7852"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bowling/Game/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "addPoint(of:)"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "isDone()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "662C2BFE-84E4-47D5-8F89-6BEB4A934E39"
+            uuid = "596C4CCF-263D-411F-9D7E-024F459BCB10"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bowling/Game/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "addPoint(of:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "isDone()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C29A4134-D5C0-429C-9186-F8F80E19DCED"
+            uuid = "66A8C435-570E-433A-8602-BE86252293E3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bowling/Game/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "addPoint(of:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "isDone()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

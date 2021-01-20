@@ -62,13 +62,13 @@ extension TrialCVC: UICollectionViewDelegateFlowLayout {
         else { return UICollectionViewCell() }
 
         cell.trialLabel.text = pointToString(trials[indexPath.row])
-        cell.cover.isHidden = game.isValid(ifAdd: trials[indexPath.row])
+        cell.cover.isHidden = game.isValid(ifAdd: trials[indexPath.row]) && !game.isDone()
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let game = game else { return }
-        if game.isValid(ifAdd: trials[indexPath.row]) {
+        if game.isValid(ifAdd: trials[indexPath.row]) && !game.isDone() {
             delegate?.trialCellTapped(index: indexPath.row, point: trials[indexPath.row])
             collectionView.reloadData()
         }

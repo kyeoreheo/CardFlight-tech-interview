@@ -31,6 +31,7 @@ class NewGameVC: UIViewController {
 
         configureUI()
     }
+    
     // MARK:- Configures
     func configureUI() {
         view.addSubview(plusButton)

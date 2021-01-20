@@ -35,6 +35,7 @@ class FrameCell: UICollectionViewCell {
         cover.isHidden = true
         configureUI()
         configureLabels()
+        thirdTrialLabel.isHidden = true
     }
     
     required init?(coder: NSCoder) {
@@ -99,6 +100,15 @@ class FrameCell: UICollectionViewCell {
         secondTrialLabel.textAlignment = .center
         secondTrialLabel.textColor = .black
         secondTrialLabel.font = .notoReg(size: 30 * ratio)
+        
+        stackView.addArrangedSubview(thirdTrialLabel)
+        thirdTrialLabel.layer.borderWidth = 1
+        thirdTrialLabel.layer.borderColor = UIColor.gray3.cgColor
+        thirdTrialLabel.textAlignment = .center
+        thirdTrialLabel.textColor = .black
+        thirdTrialLabel.font = .notoReg(size: 20 * ratio)
     }
+    
+    
     
 }
