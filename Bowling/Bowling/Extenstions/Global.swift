@@ -57,7 +57,21 @@ func pointToString(_ point: Point) -> String {
 }
 
 struct History {
-    let players: [String]
-    let colors: [UIColor]
-    let scores: [Int]
+    let players: [Player]
+    let date: Date
+    func maxScore() -> Int {
+        var maxPoint = 0
+        for i in 0..<players.count {
+            if maxPoint < players[i].score {
+                maxPoint = players[i].score
+            }
+        }
+        return maxPoint
+    }
+}
+
+struct Player {
+    let name: String
+    let color: UIColor
+    let score: Int
 }

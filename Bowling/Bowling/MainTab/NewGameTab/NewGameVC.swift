@@ -81,21 +81,17 @@ class NewGameVC: UIViewController {
     
     @objc func plusButtonTapped() {
 //        stackView.addArrangedSubview(GameSection(name: "New Player").view)
-        var players = [String]()
-        var colors = [UIColor]()
-        var scores = [Int]()
+        var players = [Player]()
         sections.forEach {
             //played at least one
             if $0.gameCVC.game.board[0].points[0] != .idle {
-                players.append($0.name)
-                colors.append($0.color)
-                scores.append($0.gameCVC.game.board[$0.gameCVC.game.currentFrame].cumulativeScore)
+                players.append(Player(name: $0.name, color: $0.color, score: $0.gameCVC.game.board[$0.gameCVC.game.currentFrame].cumulativeScore))
                 $0.gameCVC.resetGame()
                 $0.trialCVC.resetTrial()
             }
         }
         
-        let history = History(players: players, colors: colors, scores: scores)
+        let history = History(players: players, date: Date())
         Storage.shared.histories.append(history)
         
         

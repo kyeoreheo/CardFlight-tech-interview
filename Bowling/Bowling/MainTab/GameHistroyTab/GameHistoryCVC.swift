@@ -9,7 +9,7 @@ import UIKit
 
 class GameHistoryCVC: UICollectionViewController {
     // MARK:- Properties
-//    weak var delegate: TrialCVCDelegate?
+
     public var histories: [History]? {
         didSet {
             collectionView.reloadData()
@@ -38,7 +38,6 @@ class GameHistoryCVC: UICollectionViewController {
     private func configure() {
         collectionView.backgroundColor = .white
         collectionView.register(GameHistoryCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        //collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.showsHorizontalScrollIndicator = false
     }
     
@@ -59,9 +58,37 @@ extension GameHistoryCVC: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GameHistoryCell
         else { return UICollectionViewCell() }
-
-//        cell.trialLabel.text = pointToString(trials[indexPath.row])
-//        cell.cover.isHidden = game.isValid(ifAdd: trials[indexPath.row]) && !game.isDone()
+        
+        let currentHistory = Storage.shared.histories[indexPath.row]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy hh:mm"
+        cell.dateLabel.text = formatter.string(from: currentHistory.date)
+        
+        
+        currentHistory.players.forEach {
+            if $0.color == .blue {
+                cell.blueLabel.text = "Blue\n\(String($0.score))"
+                if $0.score == currentHistory.maxScore() {
+                    cell.blueCrown.isHidden = false
+                }
+            }
+            
+            if $0.color == .red {
+                cell.redLabel.text = "Red\n\(String($0.score))"
+                if $0.score == currentHistory.maxScore() {
+                    cell.redCrown.isHidden = false
+                }
+            }
+            
+            if $0.color == .green {
+                cell.greenLabel.text = "Green\n\(String($0.score))"
+                if $0.score == currentHistory.maxScore() {
+                    cell.greenCrown.isHidden = false
+                }
+            }
+            
+        }
+        
         return cell
     }
     
