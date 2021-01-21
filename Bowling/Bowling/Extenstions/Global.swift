@@ -55,3 +55,9 @@ func pointToString(_ point: Point) -> String {
         return String(point.rawValue)
     }
 }
+
+struct History {
+    let players: [String]
+    let colors: [UIColor]
+    let scores: [Int]
+}

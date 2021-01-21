@@ -13,7 +13,7 @@ protocol TrialCVCDelegate: class {
 class TrialCVC: UICollectionViewController {    
     // MARK:- Properties
     weak var delegate: TrialCVCDelegate?
-    private let reuseIdentifier = "trialCells"
+    private let reuseIdentifier = "trialCell"
     public var trials: [Point] = [.strike, .spare, .miss, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine]
     public var game: Game?
 
@@ -40,6 +40,12 @@ class TrialCVC: UICollectionViewController {
         collectionView.register(TrialCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    public func resetTrial() {
+        collectionView.reloadData()
+        let indexPath = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
     
 }

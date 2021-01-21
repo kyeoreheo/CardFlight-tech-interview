@@ -8,14 +8,18 @@
 import UIKit
 
 class GameSection: UIViewController {
-    let gameCVC = GameCVC()
+    lazy var gameCVC = GameCVC(color: color)
     let trialCVC = TrialCVC()
     let nameLabel = UILabel()
     let cumulativeScore = UILabel()
+    let name: String
+    let color: UIColor
     
-    init(name: String) {
-        super.init(nibName: nil, bundle: nil)
+    init(name: String, color: UIColor) {
+        self.name = name
+        self.color = color
         nameLabel.text = name
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
