@@ -12,7 +12,7 @@ class GameHistoryVC: UIViewController {
     private let totalNumberOfGameLabel = UILabel()
     private let emptyHistoryImage = UIImageView()
     private let gameHistoryCVC = GameHistoryCVC()
-    // MARK:- Properties
+
     // MARK:- Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,4 +64,5 @@ class GameHistoryVC: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
+    
 }

@@ -6,16 +6,17 @@
 //
 
 import UIKit
+
 protocol TrialCVCDelegate: class {
     func trialCellTapped(index: Int, point: Point)
 }
 
 class TrialCVC: UICollectionViewController {    
     // MARK:- Properties
-    weak var delegate: TrialCVCDelegate?
-    private let reuseIdentifier = "trialCell"
-    public var trials: [Point] = [.strike, .spare, .miss, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine]
+    public weak var delegate: TrialCVCDelegate?
     public var game: Game?
+    private let reuseIdentifier = "trialCell"
+    private var trials: [Point] = [.strike, .spare, .miss, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine]
 
     // MARK:- Lifecycles
     override init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()) {
@@ -42,6 +43,7 @@ class TrialCVC: UICollectionViewController {
         collectionView.showsHorizontalScrollIndicator = false
     }
     
+    // MARK:- Helpers
     public func resetTrial() {
         collectionView.reloadData()
         let indexPath = IndexPath(item: 0, section: 0)

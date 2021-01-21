@@ -9,8 +9,8 @@ import UIKit
 
 class TrialCell: UICollectionViewCell {
     // MARK:- View components
-    let trialLabel = UILabel()
-    let cover = UIView()
+    public let trialLabel = UILabel()
+    public let cover = UIView()
     
     // MARK:- Lifecycles
     override init(frame: CGRect) {

@@ -9,42 +9,20 @@ import UIKit
 import SnapKit
 
 class SplashView: UIViewController {
+    // MARK:- ViewComponents
     private let label = UILabel()
 
+    // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         applyGlobalVariables()
         configureUI()
-        
-        let myGame = Game()
-
-        myGame.addPoint(of: .miss)
-        myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .four)
-        myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .seven)
-        myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .five)
-        myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .seven)
-        myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .seven)
-        myGame.addPoint(of: .one)
-        myGame.addPoint(of: .six)
-        myGame.addPoint(of: .spare)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .strike)
-        myGame.addPoint(of: .strike)
-
-        myGame.boardInfo()
         presentMainTabBar()
     }
     
+    // MARK: - Configusres
     private func configureUI() {
         view.backgroundColor = .orange
-//
         view.addSubview(label)
         label.text = "CardFlight Tech Challenge"
         label.textColor = .white
@@ -54,6 +32,7 @@ class SplashView: UIViewController {
         }
     }
     
+    // MARK:- Helpers
     private func presentMainTabBar() {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
@@ -64,7 +43,6 @@ class SplashView: UIViewController {
         }
     }
     
-    // MARK:- Helpers
     private func applyGlobalVariables() {
         let heightRatio: CGFloat = view.frame.height / 812.0
         ratio = heightRatio < 1 ? 1:heightRatio
@@ -72,4 +50,5 @@ class SplashView: UIViewController {
         topSafeMargin = ( UIApplication.shared.windows.first{$0.isKeyWindow}?.safeAreaInsets.top ?? 0) as CGFloat
         phoneWidth = view.frame.width
     }
+    
 }

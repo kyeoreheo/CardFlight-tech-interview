@@ -8,8 +8,10 @@
 import Foundation
 
 class Game {
+    // MARK:- PublicProperties
     public var board = [Frame]()
     
+    // MARK:- PrivateProperties
     private(set) var currentFrame = 0
     private(set) var currentTrial = 0
     private var bonusPointQueue = Array<BonusPoint>()
@@ -18,12 +20,8 @@ class Game {
         setIdel()
     }
     
+    // MARK:- PublicFunctions
     public func setIdel() {
-        print("DEBUG:- idle")
-        boardInfo()
-        board.removeAll()
-        boardInfo()
-
         currentFrame = 0
         currentTrial = 0
         for i in 1...10 {
@@ -88,6 +86,23 @@ class Game {
         return true
     }
     
+    public func isDone() -> Bool {
+        if currentFrame == 9 && board[9].points[0] != .idle && board[9].points[1] != .idle {
+            if board[9].points[2] != .idle {
+                return true
+            } else if board[9].points[0].rawValue
+                + board[9].points[1].rawValue == 10 {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
+    
+    }
+    
+    // MARK:- PrivateFunctions
     private func isSpare(when point: Point) -> Bool {
         return point == .spare ||
             (currentTrial > 0 && board[currentFrame].points[currentTrial - 1].rawValue
@@ -106,22 +121,6 @@ class Game {
                 index += 1
             }
         }
-    }
-    
-    public func isDone() -> Bool {
-        if currentFrame == 9 && board[9].points[0] != .idle && board[9].points[1] != .idle {
-            if board[9].points[2] != .idle {
-                return true
-            } else if board[9].points[0].rawValue
-                + board[9].points[1].rawValue == 10 {
-                return false
-            } else {
-                return true
-            }
-        } else {
-            return false
-        }
-    
     }
     
     private func appendBonusPointQueueIfNeeded(of point: Point) {
