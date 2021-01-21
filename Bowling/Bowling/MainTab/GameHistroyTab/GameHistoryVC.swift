@@ -46,8 +46,8 @@ class GameHistoryVC: UIViewController {
             make.height.equalTo(20 * ratio)
         }
         
-        view.addSubview(gameHistoryCVC.collectionView)
-        gameHistoryCVC.collectionView.snp.makeConstraints { make in
+        view.addSubview(gameHistoryCVC.view)
+        gameHistoryCVC.view.snp.makeConstraints { make in
             make.top.equalTo(totalNumberOfGameLabel.snp.bottom).offset(4)
             make.width.equalTo(view.frame.width - 32)
             make.left.equalToSuperview().offset(16)

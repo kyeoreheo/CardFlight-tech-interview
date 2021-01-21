@@ -22,6 +22,7 @@ class Game {
     
     // MARK:- PublicFunctions
     public func setIdel() {
+        board.removeAll()
         currentFrame = 0
         currentTrial = 0
         for i in 1...10 {
