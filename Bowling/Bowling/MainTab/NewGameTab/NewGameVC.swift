@@ -16,23 +16,25 @@ class NewGameVC: UIViewController {
     private let resetLabel = UILabel()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
-    var sections = [GameSection]()
 
     // MARK:- Properties
-    
+    private var sections = [GameSection]()
+
     // MARK:- Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        sections.append(GameSection(name: "Blue", color: .blue))
-        sections.append(GameSection(name: "Red", color: .red))
-        sections.append(GameSection(name: "Green", color: .green))
-
+        configure()
         configureUI()
     }
     
     // MARK:- Configures
-    func configureUI() {
+    private func configure() {
+        sections.append(GameSection(name: "Blue", color: .blue))
+        sections.append(GameSection(name: "Red", color: .red))
+        sections.append(GameSection(name: "Green", color: .green))
+    }
+    
+    private func configureUI() {
         view.backgroundColor = .white
         
         view.addSubview(saveButton)
@@ -79,11 +81,10 @@ class NewGameVC: UIViewController {
         }
     }
     
-    @objc func plusButtonTapped() {
-//        stackView.addArrangedSubview(GameSection(name: "New Player").view)
+    // MARK:- Selectors
+    @objc private func plusButtonTapped() {
         var players = [Player]()
         sections.forEach {
-            //played at least one
             if $0.gameCVC.game.board[0].points[0] != .idle {
                 players.append(Player(name: $0.name, color: $0.color, score: $0.gameCVC.game.board[$0.gameCVC.game.currentFrame].cumulativeScore))
                 $0.gameCVC.resetGame()
@@ -93,7 +94,6 @@ class NewGameVC: UIViewController {
         
         let history = History(players: players, date: Date())
         Storage.shared.histories.append(history)
-        
-        
     }
+    
 }

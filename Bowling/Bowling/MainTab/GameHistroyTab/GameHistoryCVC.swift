@@ -9,7 +9,6 @@ import UIKit
 
 class GameHistoryCVC: UICollectionViewController {
     // MARK:- Properties
-
     public var histories: [History]? {
         didSet {
             collectionView.reloadData()
@@ -34,7 +33,7 @@ class GameHistoryCVC: UICollectionViewController {
         configure()
     }
     
-    // MARK:- Configuress
+    // MARK:- Configures
     private func configure() {
         collectionView.backgroundColor = .white
         collectionView.register(GameHistoryCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -64,7 +63,6 @@ extension GameHistoryCVC: UICollectionViewDelegateFlowLayout {
         formatter.dateFormat = "MM-dd-yyyy hh:mm"
         cell.dateLabel.text = formatter.string(from: currentHistory.date)
         
-        
         currentHistory.players.forEach {
             if $0.color == .blue {
                 cell.blueLabel.text = "Blue\n\(String($0.score))"
@@ -86,9 +84,7 @@ extension GameHistoryCVC: UICollectionViewDelegateFlowLayout {
                     cell.greenCrown.isHidden = false
                 }
             }
-            
         }
-        
         return cell
     }
     

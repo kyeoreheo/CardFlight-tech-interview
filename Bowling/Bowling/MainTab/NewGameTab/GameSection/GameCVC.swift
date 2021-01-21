@@ -8,9 +8,11 @@
 import UIKit
 
 class GameCVC: UICollectionViewController {
+    // MARK:- ViewComponents
+    public var cumulativeScore: UILabel?
+
     // MARK:- Properties
     public var game = Game()
-    public var cumulativeScore: UILabel?
     private let color: UIColor
     private let reuseIdentifier = "frameCell"
     
@@ -29,29 +31,8 @@ class GameCVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        test1()
+        //test1()
         configure()
-    }
-    
-    func test1() {
-//        game.addPoint(of: .strike)
-//        game.addPoint(of: .seven)
-//        game.addPoint(of: .spare)
-//        game.addPoint(of: .nine)
-//        game.addPoint(of: .miss)
-        
-//        game.addPoint(of: .strike)
-//        game.addPoint(of: .miss)
-//        game.addPoint(of: .eight)
-//        game.addPoint(of: .eight)
-//        game.addPoint(of: .spare)
-//        game.addPoint(of: .miss)
-//        game.addPoint(of: .six)
-//        game.addPoint(of: .strike)
-//        game.addPoint(of: .strike)
-//        game.addPoint(of: .strike)
-//        game.addPoint(of: .eight)
-//        game.addPoint(of: .one)
     }
 
     // MARK:- Configures
@@ -84,8 +65,27 @@ class GameCVC: UICollectionViewController {
         cumulativeScore?.textColor = .gray7
         let indexPath = IndexPath(item: 0, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
-
-
+    }
+    
+    private func test1() {
+        game.addPoint(of: .strike)
+        game.addPoint(of: .seven)
+        game.addPoint(of: .spare)
+        game.addPoint(of: .nine)
+        game.addPoint(of: .miss)
+        
+        game.addPoint(of: .strike)
+        game.addPoint(of: .miss)
+        game.addPoint(of: .eight)
+        game.addPoint(of: .eight)
+        game.addPoint(of: .spare)
+        game.addPoint(of: .miss)
+        game.addPoint(of: .six)
+        game.addPoint(of: .strike)
+        game.addPoint(of: .strike)
+        game.addPoint(of: .strike)
+        game.addPoint(of: .eight)
+        game.addPoint(of: .one)
     }
 }
 
@@ -120,8 +120,6 @@ extension GameCVC: UICollectionViewDelegateFlowLayout {
             cell.secondTrialLabel.text = ""
         }
 
-        cell.parent = self
-        cell.index = indexPath.row
         cell.cover.isHidden = game.currentFrame != indexPath.row
         if indexPath.row == game.board.count - 1 {
             cell.thirdTrialLabel.isHidden = false

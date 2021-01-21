@@ -8,13 +8,17 @@
 import UIKit
 
 class GameSection: UIViewController {
-    lazy var gameCVC = GameCVC(color: color)
-    let trialCVC = TrialCVC()
-    let nameLabel = UILabel()
-    let cumulativeScore = UILabel()
-    let name: String
-    let color: UIColor
+    // MARK:- ViewComponents
+    private let nameLabel = UILabel()
+    public lazy var gameCVC = GameCVC(color: color)
+    public let trialCVC = TrialCVC()
+    public let cumulativeScore = UILabel()
     
+    // MARK:- Properties
+    public let name: String
+    public let color: UIColor
+    
+    // MARK:- LifeCycles
     init(name: String, color: UIColor) {
         self.name = name
         self.color = color
@@ -32,6 +36,7 @@ class GameSection: UIViewController {
         configureUI()
     }
     
+    // MARK:- Configures
     private func configure() {
         view.backgroundColor = .white
         gameCVC.cumulativeScore = cumulativeScore
@@ -78,8 +83,10 @@ class GameSection: UIViewController {
     
 }
 
+// MARK:- Extenstions
 extension GameSection: TrialCVCDelegate {
     func trialCellTapped(index: Int, point: Point) {
         gameCVC.addPoint(of: point)
     }
+    
 }

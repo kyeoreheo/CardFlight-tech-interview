@@ -9,18 +9,13 @@ import UIKit
 
 class FrameCell: UICollectionViewCell {
     // MARK:- View components
-    let frameLabel = UILabel()
-    let stackView = UIStackView()
-    let firstTrialLabel = UILabel()
-    let secondTrialLabel = UILabel()
-    let thirdTrialLabel = UILabel()
-    let cumulativePointLabel = UILabel()
-    let cover = UIView()
-    
-    // MARK:- Properties
-//    weak var delegate: FrameCellDelegate?
-    public var parent: GameCVC?
-    public var index = 0
+    public let frameLabel = UILabel()
+    public let firstTrialLabel = UILabel()
+    public let secondTrialLabel = UILabel()
+    public let thirdTrialLabel = UILabel()
+    public let cumulativePointLabel = UILabel()
+    public let cover = UIView()
+    private let stackView = UIStackView()
 
     // MARK:- Lifecycles
     override init(frame: CGRect) {
