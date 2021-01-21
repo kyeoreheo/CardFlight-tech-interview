@@ -11,20 +11,22 @@ import SnapKit
 class NewGameVC: UIViewController {
     // MARK:- View components
     private let saveButton = UIButton()
-    private let label = UILabel()
+    private let saveLabel = UILabel()
+    private let resetButton = UIButton()
+    private let resetLabel = UILabel()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     var sections = [GameSection]()
 
     // MARK:- Properties
     
-    // MARK:- Lifecycless
+    // MARK:- Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        sections.append(GameSection(name: "Player 1"))
-        sections.append(GameSection(name: "Player 2"))
-        sections.append(GameSection(name: "Player 3"))
+        sections.append(GameSection(name: "Blue", color: .blue))
+        sections.append(GameSection(name: "Red", color: .red))
+        sections.append(GameSection(name: "Green", color: .green))
 
         configureUI()
     }
@@ -42,12 +44,12 @@ class NewGameVC: UIViewController {
             make.right.equalToSuperview().offset(-8)
         }
         
-        view.addSubview(label)
-        label.text = "Save"
-        label.textColor = .black
-        label.font = .notoReg(size: 12 * ratio)
-        label.textAlignment = .right
-        label.snp.makeConstraints { make in
+        view.addSubview(saveLabel)
+        saveLabel.text = "Save"
+        saveLabel.textColor = .black
+        saveLabel.font = .notoReg(size: 12 * ratio)
+        saveLabel.textAlignment = .right
+        saveLabel.snp.makeConstraints { make in
             make.centerY.equalTo(saveButton)
             make.right.equalTo(saveButton.snp.left).offset(-8)
         }
@@ -78,6 +80,20 @@ class NewGameVC: UIViewController {
     }
     
     @objc func plusButtonTapped() {
-        stackView.addArrangedSubview(GameSection(name: "New Player").view)
+//        stackView.addArrangedSubview(GameSection(name: "New Player").view)
+        var players = [Player]()
+        sections.forEach {
+            //played at least one
+            if $0.gameCVC.game.board[0].points[0] != .idle {
+                players.append(Player(name: $0.name, color: $0.color, score: $0.gameCVC.game.board[$0.gameCVC.game.currentFrame].cumulativeScore))
+                $0.gameCVC.resetGame()
+                $0.trialCVC.resetTrial()
+            }
+        }
+        
+        let history = History(players: players, date: Date())
+        Storage.shared.histories.append(history)
+        
+        
     }
 }

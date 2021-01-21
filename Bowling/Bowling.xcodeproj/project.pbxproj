@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3138D8E825B8DDC600B171D4 /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138D8E725B8DDC600B171D4 /* GameHistoryCell.swift */; };
+		3138D8ED25B8E18100B171D4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138D8EC25B8E18100B171D4 /* Storage.swift */; };
 		31A9F95325B562D200166B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F95225B562D200166B3E /* AppDelegate.swift */; };
 		31A9F95525B562D200166B3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F95425B562D200166B3E /* SceneDelegate.swift */; };
 		31A9F95725B562D200166B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9F95625B562D200166B3E /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		23CE29ED6C519FC70033965D /* Pods_Bowling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bowling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3138D8E725B8DDC600B171D4 /* GameHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
+		3138D8EC25B8E18100B171D4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		31A9F94F25B562D200166B3E /* Bowling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bowling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9F95225B562D200166B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A9F95425B562D200166B3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 			children = (
 				31CDE49A25B6209B004DE90B /* GameHistoryVC.swift */,
 				31CDE4A225B620BB004DE90B /* GameHistoryCVC.swift */,
+				3138D8E725B8DDC600B171D4 /* GameHistoryCell.swift */,
 			);
 			path = GameHistroyTab;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				31CDE4A825B62270004DE90B /* Game.swift */,
+				3138D8EC25B8E18100B171D4 /* Storage.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				31CDE4A325B620BB004DE90B /* GameHistoryCVC.swift in Sources */,
 				31CDE4B425B65D79004DE90B /* NewGameVC.swift in Sources */,
 				31CDE4C125B65D97004DE90B /* FrameCell.swift in Sources */,
+				3138D8E825B8DDC600B171D4 /* GameHistoryCell.swift in Sources */,
 				31CDE46625B577C0004DE90B /* SplashView.swift in Sources */,
 				31CDE4A925B62270004DE90B /* Game.swift in Sources */,
 				31CDE4F225B6968B004DE90B /* CustomView.swift in Sources */,
@@ -482,6 +489,7 @@
 				31CDE48725B5F98D004DE90B /* MainTab.swift in Sources */,
 				31CDE50025B77DDC004DE90B /* TrialCell.swift in Sources */,
 				31CDE46E25B57812004DE90B /* Global.swift in Sources */,
+				3138D8ED25B8E18100B171D4 /* Storage.swift in Sources */,
 				31CDE4ED25B69127004DE90B /* GameSection.swift in Sources */,
 				31CDE4BC25B65D8B004DE90B /* GameCVC.swift in Sources */,
 				31A9F95525B562D200166B3E /* SceneDelegate.swift in Sources */,

@@ -13,11 +13,21 @@ class Game {
     private(set) var currentFrame = 0
     private(set) var currentTrial = 0
     private var bonusPointQueue = Array<BonusPoint>()
-//    private(set) var done = false
     
     init() {
+        setIdel()
+    }
+    
+    public func setIdel() {
+        print("DEBUG:- idle")
+        boardInfo()
+        board.removeAll()
+        boardInfo()
+
+        currentFrame = 0
+        currentTrial = 0
         for i in 1...10 {
-            self.board.append(Frame(number: i))
+            board.append(Frame(number: i))
         }
     }
     

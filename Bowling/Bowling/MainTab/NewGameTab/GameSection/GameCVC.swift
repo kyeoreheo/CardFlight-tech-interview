@@ -11,10 +11,12 @@ class GameCVC: UICollectionViewController {
     // MARK:- Properties
     public var game = Game()
     public var cumulativeScore: UILabel?
+    private let color: UIColor
     private let reuseIdentifier = "frameCell"
     
     // MARK:- Lifecycles
-    override init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()) {
+    init(color: UIColor, collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()) {
+        self.color = color
         let myLayout = UICollectionViewFlowLayout()
         myLayout.scrollDirection = .horizontal
         myLayout.minimumLineSpacing = 4
@@ -73,6 +75,16 @@ class GameCVC: UICollectionViewController {
             cumulativeScore?.text = "Score:  \(String(game.board[game.currentFrame].cumulativeScore))"
             cumulativeScore?.textColor = .gray7
         }
+    }
+    
+    public func resetGame() {
+        game.setIdel()
+        collectionView.reloadData()
+        cumulativeScore?.text = "Score:  \(String(game.board[game.currentFrame].cumulativeScore))"
+        cumulativeScore?.textColor = .gray7
+        let indexPath = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+
 
     }
 }
@@ -92,6 +104,7 @@ extension GameCVC: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FrameCell
         
+        cell.frameLabel.backgroundColor = color
         cell.frameLabel.text = String(game.board[indexPath.row].number)
         cell.firstTrialLabel.text = pointToString(game.board[indexPath.row].points[0])
         cell.cumulativePointLabel.text = String(game.board[indexPath.row

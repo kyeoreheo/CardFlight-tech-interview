@@ -40,7 +40,6 @@ class FrameCell: UICollectionViewCell {
     private func configureUI() {
         addSubview(frameLabel)
         frameLabel.textAlignment = .center
-        frameLabel.backgroundColor = .blue
         frameLabel.textColor = .white
         frameLabel.font = .notoBold(size: 20 * ratio)
         frameLabel.snp.makeConstraints { make in
